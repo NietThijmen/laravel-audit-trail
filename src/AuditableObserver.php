@@ -8,10 +8,9 @@ use NietThijmen\LaravelAuditTrail\Models\AuditTrail;
 
 class AuditableObserver
 {
-
     private function get_causer_data(Auditable $auditable)
     {
-        if(auth()->user() !== null) {
+        if (auth()->user() !== null) {
             return [
                 'causer' => get_class(auth()->user()),
                 'causer_id' => auth()->user()->id,
@@ -42,7 +41,7 @@ class AuditableObserver
                 'new_data' => $auditable->getAttributes(),
             ]);
         } catch (\Throwable $throwable) {
-            Log::debug("Error creating audit trail for model: " . get_class($auditable) . " with id: " . $auditable->id);
+            Log::debug('Error creating audit trail for model: '.get_class($auditable).' with id: '.$auditable->id);
         }
 
     }
@@ -65,7 +64,7 @@ class AuditableObserver
                 'new_data' => $auditable->getAttributes(),
             ]);
         } catch (\Throwable $throwable) {
-            Log::debug("Error creating audit trail for model: " . get_class($auditable) . " with id: " . $auditable->id);
+            Log::debug('Error creating audit trail for model: '.get_class($auditable).' with id: '.$auditable->id);
         }
     }
 
@@ -87,7 +86,7 @@ class AuditableObserver
                 'new_data' => null,
             ]);
         } catch (\Throwable $throwable) {
-            Log::debug("Error creating audit trail for model: " . get_class($auditable) . " with id: " . $auditable->id);
+            Log::debug('Error creating audit trail for model: '.get_class($auditable).' with id: '.$auditable->id);
         }
     }
 
@@ -109,7 +108,7 @@ class AuditableObserver
                 'new_data' => $auditable->getAttributes(),
             ]);
         } catch (\Throwable $throwable) {
-            Log::debug("Error creating audit trail for model: " . get_class($auditable) . " with id: " . $auditable->id);
+            Log::debug('Error creating audit trail for model: '.get_class($auditable).' with id: '.$auditable->id);
         }
     }
 
@@ -131,7 +130,7 @@ class AuditableObserver
                 'new_data' => null,
             ]);
         } catch (\Throwable $throwable) {
-            Log::debug("Error creating audit trail for model: " . get_class($auditable) . " with id: " . $auditable->id);
+            Log::debug('Error creating audit trail for model: '.get_class($auditable).' with id: '.$auditable->id);
         }
     }
 }
