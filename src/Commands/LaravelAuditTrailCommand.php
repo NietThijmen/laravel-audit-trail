@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace NietThijmen\LaravelAuditTrail\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelAuditTrailCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-audit-trail';
 
     public $description = 'My command';
 

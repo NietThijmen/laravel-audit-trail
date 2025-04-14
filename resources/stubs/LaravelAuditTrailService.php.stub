@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\ServiceProvider;
+use NietThijmen\LaravelAuditTrail\AuditableObserver;
+use NietThijmen\LaravelAuditTrail\Contracts\Auditable;
+
+class LaravelAuditTrailService extends ServiceProvider
+{
+    public function register()
+    {
+
+    }
+
+    public function boot(): void
+        {
+            $modelPath = app_path('Models');
+            $modelNamespace = 'App\\Models\\';
+
+            foreach (File::allFiles($modelPath) as $file) {
+                $modelClass = $modelNamespace . $file->getFilenameWithoutExtension();
+
+                if (is_subclass_of($modelClass, Model::class) && in_array(Auditable::class, class_implements($modelClass))) {
+                    $modelClass::observe(AuditableObserver::class);
+                }
+            }
+        }
+
+}
