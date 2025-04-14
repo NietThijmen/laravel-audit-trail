@@ -2,6 +2,4 @@
 
 namespace NietThijmen\LaravelAuditTrail\Contracts;
 
-interface Auditable {
-
-}
+interface Auditable {}

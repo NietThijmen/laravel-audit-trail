@@ -2,10 +2,9 @@
 
 namespace NietThijmen\LaravelAuditTrail;
 
-use NietThijmen\LaravelAuditTrail\Contracts\Auditable;
+use NietThijmen\LaravelAuditTrail\Commands\LaravelAuditTrailCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use NietThijmen\LaravelAuditTrail\Commands\LaravelAuditTrailCommand;
 
 class LaravelAuditTrailServiceProvider extends PackageServiceProvider
 {
@@ -28,5 +27,4 @@ class LaravelAuditTrailServiceProvider extends PackageServiceProvider
             )
             ->hasCommand(LaravelAuditTrailCommand::class);
     }
-
 }

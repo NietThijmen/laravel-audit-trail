@@ -3,8 +3,8 @@
 namespace NietThijmen\LaravelAuditTrail\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use NietThijmen\LaravelAuditTrail\LaravelAuditTrailServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
