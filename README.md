@@ -8,6 +8,7 @@ Should never ever ever be used in Production environments
 ```bash
 composer require nietthijmen/laravel-audit-trail
 php artisan vendor:publish --provider "NietThijmen\LaravelAuditTrail\LaravelAuditTrailServiceProvider" --tag="audit-trail-provider"
+php artisan vendor:publish --provider "NietThijmen\LaravelAuditTrail\LaravelAuditTrailServiceProvider" --tag="audit-trail-migrations"
 ```
 
 ## Usage
